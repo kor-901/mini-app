@@ -1,0 +1,11 @@
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	margin-bottom: 50px;
+	z-index: 1;
+}
+
+.contents {
+	padding-top: calc(64px + 50px);
+}

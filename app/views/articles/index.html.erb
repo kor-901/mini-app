@@ -1,0 +1,17 @@
+<% @articles.each do |article| %>
+	<div class="row valign-wrapper">
+		<div class="col s8 offset-s2 valign">
+			<div class="card grey lighten-5">
+				<%# <div class="card-content white-text"> %>
+				<div class="card-content">
+					<span class="card-title"><%= article.title %></span>
+					<%= simple_format(article.text) %>
+				</div>
+				<div class="card-action">
+					<a href="#">This is a link</a>
+					<a href="#">This is a link</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
