@@ -1,5 +1,5 @@
 <div class="row">
-	<%= form_with model: @article, class: "col s12" do %>
+	<%= form_with model: @article, class: "col s12", url: articles_path do %>
 		<div class="row">
 			<div class="input-field col s6 offset-s2">
 				<%= text_field(:article, :title, class: "validate") %>
