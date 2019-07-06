@@ -1,0 +1,23 @@
+<div class="row">
+	<%= form_with model: @article, class: "col s12" do %>
+		<div class="row">
+			<div class="input-field col s6 offset-s2">
+				<%= text_field(:article, :title, class: "validate") %>
+				<%= label_tag "title", "Title" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s8 offset-s2">
+				<%= text_area(:article, :text, class: "materialize-textarea") %>
+				<%= label_tag "text", "Text" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s8 offset-s2">
+				<%= button_tag type: "submit", class: "waves-effect waves-light btn" do %>
+				SUBMIT<i class="material-icons right">send</i>
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+</div>
