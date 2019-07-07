@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-	before_action :move_to_index, except: :index
+	before_action :move_to_index, except: [:index, :show]
 
 	def index
 		@articles = Article.all.order("created_at DESC")
@@ -28,6 +28,10 @@ class ArticlesController < ApplicationController
 		article = Article.find(params[:id])
 		article.destroy if article.user_id == current_user.id
 		redirect_to action: :index
+	end
+
+	def show
+		@article = Article.find(params[:id])
 	end
 
 	private
