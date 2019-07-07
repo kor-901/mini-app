@@ -22,7 +22,7 @@
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <% if user_signed_in? %>
               <li>
-                <%= link_to new_article_path, class: 'waves-effect waves-light btn' do %>
+                <%= link_to user_path(current_user.id), class: 'waves-effect waves-light btn' do %>
                   <i class="material-icons left mypage-mark">home</i><span>MYPAGE</span>
                 <% end %>
               </li>
