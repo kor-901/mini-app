@@ -12,6 +12,7 @@
 					<%= link_to 'EDIT', edit_article_path(article) %>
 					<%= link_to 'DELETE', article_path(article), method: :delete %>
 				<% end %>
+				<%= link_to "投稿者：#{article.user.nickname}", user_path(article.user_id), class: "posted-user" %>
 			</div>
 		</div>
 	</div>

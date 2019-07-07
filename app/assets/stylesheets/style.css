@@ -21,3 +21,14 @@ header {
 .mypage-mark {
 	margin: 0 5px 0 0 !important;
 }
+
+.card-action {
+	position: relative;
+}
+
+.posted-user {
+	position: absolute;
+	bottom: 16px;
+	right: 24px;
+	margin: 0 !important;
+}
