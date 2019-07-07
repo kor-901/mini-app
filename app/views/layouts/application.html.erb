@@ -11,17 +11,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
     <header>
       <nav class="cyan darken-3">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo center">Mini Blog</a>
+          <%= link_to 'Mini Blog', articles_path, class: 'brand-logo center' %>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><%= link_to 'New Post', new_article_path, class: 'waves-effect waves-light btn' %></li>
-            <li><%= link_to 'Login', '', class: 'waves-effect waves-light btn' %></li>
-            <li><%= link_to 'Logout', '', class: 'waves-effect waves-light btn' %></li>
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to new_article_path, class: 'waves-effect waves-light btn' do %>
+                  <i class="material-icons left mypage-mark">home</i><span>MYPAGE</span>
+                <% end %>
+              </li>
+              <li><%= link_to 'NewPost', new_article_path, class: 'waves-effect waves-light btn' %></li>
+              <li><%= link_to 'LogOut', destroy_user_session_path, method: :delete, class: 'waves-effect waves-light btn' %></li>
+            <% else %>
+              <li><%= link_to 'LogIn', new_user_session_path, class: 'waves-effect waves-light btn' %></li>
+              <li><%= link_to 'SignUp', new_user_registration_path, class: 'waves-effect waves-light btn' %></li>
+            <% end %>
+          </ul>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <% if user_signed_in? %>
+              <li><i class="material-icons left login-mark">person</i><span>Log In ： <%= current_user.nickname %></span></li>
+            <% end %>
           </ul>
         </div>
       </nav>

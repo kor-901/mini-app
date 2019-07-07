@@ -9,3 +9,15 @@ header {
 .contents {
 	padding-top: calc(64px + 50px);
 }
+
+.contents h3 {
+	margin-top: 0;
+}
+
+.login-mark {
+	margin: 0 5px 0 10px !important;
+}
+
+.mypage-mark {
+	margin: 0 5px 0 0 !important;
+}
