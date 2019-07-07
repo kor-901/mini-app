@@ -28,6 +28,11 @@
               <li><%= link_to 'SignUp', new_user_registration_path, class: 'waves-effect waves-light btn' %></li>
             <% end %>
           </ul>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <% if user_signed_in? %>
+              <li><i class="material-icons left login-mark">person</i><span>Log In ： <%= current_user.nickname %></span></li>
+            <% end %>
+          </ul>
         </div>
       </nav>
     </header>

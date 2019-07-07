@@ -13,3 +13,7 @@ header {
 .contents h3 {
 	margin-top: 0;
 }
+
+.login-mark {
+	margin: 0 5px 0 10px !important;
+}
