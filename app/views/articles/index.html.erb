@@ -1,20 +1,3 @@
 <% @articles.each do |article| %>
-	<div class="row valign-wrapper">
-		<div class="col s8 offset-s2 valign">
-			<div class="card grey lighten-5">
-				<%# <div class="card-content white-text"> %>
-				<div class="card-content">
-					<span class="card-title"><%= article.title %></span>
-					<%= simple_format(article.text, class: "truncate") %>
-				</div>
-				<div class="card-action">
-					<%= link_to 'SHOW', article_path(article) %>
-					<% if user_signed_in? && article.user_id == current_user.id %>
-						<%= link_to 'EDIT', edit_article_path(article) %>
-						<%= link_to 'DELETE', article_path(article), method: :delete %>
-					<% end %>
-				</div>
-			</div>
-		</div>
-	</div>
+	<%= render partial: "article", locals: {article: article} %>
 <% end %>

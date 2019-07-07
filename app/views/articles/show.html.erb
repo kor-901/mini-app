@@ -5,12 +5,14 @@
 				<span class="card-title"><%= @article.title %></span>
 				<%= simple_format(@article.text) %>
 			</div>
-			<% if user_signed_in? && @article.user_id == current_user.id %>
 				<div class="card-action">
+				<% if user_signed_in? && @article.user_id == current_user.id %>
 					<%= link_to 'EDIT', edit_article_path(@article) %>
 					<%= link_to 'DELETE', article_path(@article), method: :delete %>
-				</div>
-			<% end %>
+				<% end %>
+				<%= link_to '', '', class: "dummy" %>
+				<%= link_to "投稿者：#{@article.user.nickname}", user_path(@article.user_id), class: "posted-user" %>
+			</div>
 		</div>
 	</div>
 </div>
