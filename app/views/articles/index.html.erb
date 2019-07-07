@@ -8,7 +8,7 @@
 					<%= simple_format(article.text, class: "truncate") %>
 				</div>
 				<div class="card-action">
-					<a href="#">This is a link</a>
+					<%= link_to 'SHOW', article_path(article) %>
 					<% if user_signed_in? && article.user_id == current_user.id %>
 						<%= link_to 'EDIT', edit_article_path(article) %>
 						<%= link_to 'DELETE', article_path(article), method: :delete %>
