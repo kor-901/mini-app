@@ -6,11 +6,21 @@ class ArticlesController < ApplicationController
 	end
 
 	def new
-		@Article = Article.new
+		@article = Article.new
 	end
 
 	def create
 		Article.create(title: article_params[:title], text: article_params[:text], user_id: current_user.id)
+		redirect_to action: :index
+	end
+
+	def edit
+		@article = Article.find(params[:id])
+	end
+
+	def update
+		article = Article.find(params[:id])
+		article.update(article_params) if article.user_id == current_user.id
 		redirect_to action: :index
 	end
 
