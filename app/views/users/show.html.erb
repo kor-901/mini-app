@@ -1,4 +1,4 @@
-<h4 class="center-align">Articles posted by <%= @nickname %></h4>
+<h4 class="center-align contents-title">Articles posted by <%= @nickname %></h4>
 
 <% @articles.each do |article| %>
 	<%= render partial: "articles/article", locals: {article: article} %>
