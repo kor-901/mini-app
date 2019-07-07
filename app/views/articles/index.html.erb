@@ -9,7 +9,9 @@
 				</div>
 				<div class="card-action">
 					<a href="#">This is a link</a>
-					<a href="#">This is a link</a>
+					<% if user_signed_in? && article.user_id == current_user.id %>
+						<%= link_to 'EDIT', edit_article_path(article) %>
+					<% end %>
 				</div>
 			</div>
 		</div>
