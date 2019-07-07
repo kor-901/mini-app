@@ -21,6 +21,11 @@
           <%= link_to 'Mini Blog', articles_path, class: 'brand-logo center' %>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <% if user_signed_in? %>
+              <li>
+                <%= link_to new_article_path, class: 'waves-effect waves-light btn' do %>
+                  <i class="material-icons left mypage-mark">home</i><span>MYPAGE</span>
+                <% end %>
+              </li>
               <li><%= link_to 'NewPost', new_article_path, class: 'waves-effect waves-light btn' %></li>
               <li><%= link_to 'LogOut', destroy_user_session_path, method: :delete, class: 'waves-effect waves-light btn' %></li>
             <% else %>
