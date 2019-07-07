@@ -11,6 +11,7 @@
 					<a href="#">This is a link</a>
 					<% if user_signed_in? && article.user_id == current_user.id %>
 						<%= link_to 'EDIT', edit_article_path(article) %>
+						<%= link_to 'DELETE', article_path(article), method: :delete %>
 					<% end %>
 				</div>
 			</div>
