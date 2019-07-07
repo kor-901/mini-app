@@ -9,3 +9,7 @@ header {
 .contents {
 	padding-top: calc(64px + 50px);
 }
+
+.contents h3 {
+	margin-top: 0;
+}
